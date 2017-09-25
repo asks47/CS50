@@ -1,0 +1,9 @@
+--create shared
+gcc -Wall -fPIC -c Namaste.c
+gcc -shared -o Namaste.so.0.0.1 Namaste.o
+
+gcc -Wall -fPIC -c Pranam.c 
+gcc -shared -o Pranam.so.0.0.1 Pranam.o
+
+----compile 
+gcc -o main main.c Hello.c -ldl

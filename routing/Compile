@@ -1,0 +1,21 @@
+--To compile shared object/ SO file
+sudo gcc -c -fPIC Namaste.c -o Namaste.o
+gcc Namaste.o -shared -o Namaste.so
+--To do it in a single command line
+gcc -shared -o Namaste.so -fPIC Namaste.c
+
+--compile main with header
+gcc -o Hello Hello.c HelloHeader.c
+
+--compile shared object Pranam
+sudo gcc -c -fPIC Pranam.c -o Pranam.o
+sudo gcc Pranam.o -shared -o Pranam.so
+
+--to create dynamic load 
+sudo gcc -o test test.c -ldl
+
+--compile dynamic load program
+sudo gcc -o WrapperHello WrapperHello.c -ldl
+
+--whole compile with wrapper function
+gcc -o Hello Hello.c HelloHeader.c WrapperHello.c -ldl

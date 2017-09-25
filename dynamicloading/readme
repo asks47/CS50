@@ -1,0 +1,17 @@
+--Compile shared objects
+gcc -c -Wall -Werror -fpic function1.c
+gcc -shared -o libfunction1.so function1.o
+
+--Complile with main and link libfunction
+gcc -Wall -o test main.c -lfunction1
+Or
+gcc -L /home/ubuntu/workspace/sample/ -Wall -o test main.c -lfunction1
+
+--Setting Library path
+LD_LIBRARY_PATH=/home/ubuntu/workspace/sample/:$LD_LIBRARY_PATH
+
+--compile 
+gcc -o main main.c Hello.c -ldl
+
+--
+LD_LIBRARY_PATH=. ldd ./main
